@@ -69,9 +69,9 @@ Autonami Public API uses API keys to allow access to the API. New keys can be ge
 
 Autonami Public API expects for the API key to be included in all API requests to the server in a query string that looks like the following:
 
-Parameter | Description
---------- | -----------
-bwfan_public_api_key | your_api_key 
+Parameter | Type | Description | Mandatory
+--------- | ----------- | ----------- | -----------
+bwfan_public_api_key | String | your_api_key | YES
 
 <aside class="notice">
 You must replace <code>your_api_key</code> with your personal API key.
