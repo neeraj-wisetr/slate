@@ -2,22 +2,13 @@
 
 The lists API allows you to create, view, update, and delete individual, or a batch, of lists.
 
-Parameter | Type | Description | MANDATORY
---------- |--| ----------- | -----------
+Parameter | Type   | Description | MANDATORY
+--------- |--------| ----------- | -----------
 bwfan_public_api_key | string | Api key for authorization | YES
 
 ## Get All Lists
 
 This endpoint retrieves all lists.
-
-### HTTP Request
-
-`GET http://example.com/wp-json/autonami/lists`
-
-Parameter | Type   | Description | MANDATORY
---------- |--------| ----------- | -----------
-page | integer | Current page of the collection | NO.
-
 
 ```php
 <?php
@@ -56,6 +47,14 @@ echo $response;
 ?>
 ```
 
+### HTTP Request
+
+`GET http://example.com/wp-json/autonami/lists`
+
+Parameter | Type   | Description | MANDATORY
+--------- |--------| ----------- | -----------
+page | integer | Current page of the collection | NO.
+
 > JSON response example:
 
 ```json
@@ -80,15 +79,6 @@ echo $response;
 ## Add Lists
 
 This endpoint add the lists.
-
-### HTTP Request
-
-`POST http://example.com/wp-json/autonami/list/add`
-
-Parameter | Type | Description | MANDATORY
---------- |--| ----------- | -----------
-lists | array | an array of JSON objects, respectively, that includes the list name - <code>{"lists": ["list","lists2", ...]}</code> | YES
-
 
 ```php
 <?php
@@ -127,6 +117,14 @@ echo $response;
 ?>
 ```
 
+### HTTP Request
+
+`POST http://example.com/wp-json/autonami/list/add`
+
+Parameter | Type  | Description | MANDATORY
+--------- |-------| ----------- | -----------
+lists | array | an array of JSON objects, respectively, that includes the list name - <code>{"lists": ["list","lists2", ...]}</code> | YES
+
 > JSON response example:
 
 ```json
@@ -156,18 +154,9 @@ echo $response;
 }
 ```
 
-## Update List
+## Update A List
 
 This endpoint update the list.
-
-### HTTP Request
-
-`POST http://example.com/wp-json/autonami/list/update/{list_id}`
-
-Parameter | Type | Description | MANDATORY
---------- |--| ----------- | -----------
-list | string | a JSON object, respectively, that includes the list name - <code>{"list": "list_name"}</code> | YES
-
 
 ```php
 <?php
@@ -206,6 +195,15 @@ echo $response;
 ?>
 ```
 
+
+### HTTP Request
+
+`POST http://example.com/wp-json/autonami/list/update/{list_id}`
+
+Parameter | Type   | Description | MANDATORY
+--------- |--------| ----------- | -----------
+list | string | a JSON object, respectively, that includes the list name - <code>{"list": "list_name"}</code> | YES
+
 > JSON response example:
 
 ```json
@@ -218,17 +216,9 @@ echo $response;
 }
 ```
 
-## Delete List
+## Delete A List
 
 This endpoint delete the List.
-
-### HTTP Request
-
-`DELETE http://example.com/wp-json/autonami/list/delete/{list_id}`
-
-Parameter | Type | Description | MANDATORY
---------- |--| ----------- | -----------
-
 
 ```php
 <?php
@@ -261,6 +251,13 @@ echo $response;
 
 ?>
 ```
+
+### HTTP Request
+
+`DELETE http://example.com/wp-json/autonami/list/delete/{list_id}`
+
+Parameter | Type | Description | MANDATORY
+--------- |------| ----------- | -----------
 
 > JSON response example:
 

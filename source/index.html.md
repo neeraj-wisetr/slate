@@ -10,6 +10,8 @@ toc_footers:
 includes:
   - tags/tags
   - lists/lists
+  - fields/fields
+  - contacts/contacts
   - errors
 
 search: true
@@ -25,7 +27,7 @@ meta:
 
 Welcome to the Autonami Public API! You can use our API to access Autonami Public API endpoints, which can manage autonami data in our database.
 
-We have language bindings in Shell, Ruby, Python, PHP and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 # Authentication
 

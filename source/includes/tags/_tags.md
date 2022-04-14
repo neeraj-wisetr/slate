@@ -2,22 +2,13 @@
 
 The tags API allows you to create, view, update, and delete individual, or a batch, of tags.
 
-Parameter | Type | Description | Mandatory
---------- |--| ----------- | -----------
+Parameter | Type   | Description | Mandatory
+--------- |--------| ----------- | -----------
 bwfan_public_api_key | string | Api key for authorization | YES
 
 ## Get All Tags
 
 This endpoint retrieves all tags.
-
-### HTTP Request
-
-`GET http://example.com/wp-json/autonami/tags`
-
-Parameter | Type   | Description | Mandatory
---------- |--------| ----------- | -----------
-page | integer | Current page of the collection | NO.
-
 
 ```php
 <?php
@@ -56,6 +47,15 @@ echo $response;
 ?>
 ```
 
+### HTTP Request
+
+`GET http://example.com/wp-json/autonami/tags`
+
+Parameter | Type   | Description | Mandatory
+--------- |--------| ----------- | -----------
+page | integer | Current page of the collection | NO.
+
+
 > JSON response example:
 
 ```json
@@ -80,15 +80,6 @@ echo $response;
 ## Add Tags
 
 This endpoint add the tags.
-
-### HTTP Request
-
-`POST http://example.com/wp-json/autonami/tag/add`
-
-Parameter | Type | Description | Mandatory
---------- |--| ----------- | -----------
-tags | array | an array of JSON objects, respectively, that includes the tag name - <code>{"tags": ["tag","tag2", ...]}</code> | YES
-
 
 ```php
 <?php
@@ -127,6 +118,15 @@ echo $response;
 ?>
 ```
 
+### HTTP Request
+
+`POST http://example.com/wp-json/autonami/tag/add`
+
+Parameter | Type  | Description | Mandatory
+--------- |-------| ----------- | -----------
+tags | array | an array of JSON objects, respectively, that includes the tag name - <code>{"tags": ["tag","tag2", ...]}</code> | YES
+
+
 > JSON response example:
 
 ```json
@@ -156,18 +156,9 @@ echo $response;
 }
 ```
 
-## Update Tag
+## Update A Tag
 
 This endpoint update the tag.
-
-### HTTP Request
-
-`POST http://example.com/wp-json/autonami/tag/update/{tag_id}`
-
-Parameter | Type | Description | Mandatory
---------- |--| ----------- | -----------
-tag | string | a JSON object, respectively, that includes the tag name - <code>{"tag": "tag_name"}</code> | YES
-
 
 ```php
 <?php
@@ -206,6 +197,15 @@ echo $response;
 ?>
 ```
 
+### HTTP Request
+
+`POST http://example.com/wp-json/autonami/tag/update/{tag_id}`
+
+Parameter | Type   | Description | Mandatory
+--------- |--------| ----------- | -----------
+tag | string | a JSON object, respectively, that includes the tag name - <code>{"tag": "tag_name"}</code> | YES
+
+
 > JSON response example:
 
 ```json
@@ -218,17 +218,9 @@ echo $response;
 }
 ```
 
-## Delete Tag
+## Delete A Tag
 
 This endpoint delete the tag.
-
-### HTTP Request
-
-`DELETE http://example.com/wp-json/autonami/tag/delete/{tag_id}`
-
-Parameter | Type | Description | Mandatory
---------- |--| ----------- | -----------
-
 
 ```php
 <?php
@@ -261,6 +253,14 @@ echo $response;
 
 ?>
 ```
+
+### HTTP Request
+
+`DELETE http://example.com/wp-json/autonami/tag/delete/{tag_id}`
+
+Parameter | Type | Description | Mandatory
+--------- |------| ----------- | -----------
+
 
 > JSON response example:
 
