@@ -116,7 +116,7 @@ list | array | array of list id <code>[id1,id2,...]</code>                      
 }
 ```
 
-## Get Contact by ID
+## Get Contact by ID or Email
 
 This endpoint retrieves contact detail of specified id or email
 
@@ -160,6 +160,10 @@ Parameter | Type | Description          | Mandatory
 --------- |------|----------------------| -----------
 id  | integer | Id of the contact | NO
 email | string | Email of the contact | NO
+
+<aside class="notice">
+One of the id or email need to be provided.
+</aside>
 
 > JSON response example:
 
