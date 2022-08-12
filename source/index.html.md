@@ -38,7 +38,7 @@ We have language bindings in PHP! You can view code examples in the dark area to
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/tags';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -73,7 +73,7 @@ Autonami Public API expects for the API key to be included in all API requests t
 
 Parameter | Type | Description | Mandatory
 --------- | ----------- | ----------- | -----------
-bwfan_public_api_key | String | your_api_key | YES
+api_key | String | your_api_key | YES
 
 <aside class="notice">
 You must replace <code>your_api_key</code> with your personal API key.

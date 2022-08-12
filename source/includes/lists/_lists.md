@@ -4,7 +4,7 @@ The lists API allows you to create, view, update, and delete individual, or a ba
 
 Parameter | Type   | Description | MANDATORY
 --------- |--------| ----------- | -----------
-bwfan_public_api_key | string | Api key for authorization | YES
+api_key | string | Api key for authorization | YES
 
 ## Get All Lists
 
@@ -15,7 +15,7 @@ This endpoint retrieves all lists.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/lists';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -59,20 +59,21 @@ page | integer | Current page of the collection | NO.
 
 ```json
 {
-  "code": 200,
-  "message": "Lists fetched successfully",
-  "result": [
-    {
-      "ID": 4,
-      "name": "list"
-    },
-    {
-      "ID": 5,
-      "name": "list2"
-    }
-  ],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "lists": [
+      {
+        "ID": 6,
+        "name": "list2"
+      },
+      {
+        "ID": 4,
+        "name": "list1"
+      }
+    ],
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -85,7 +86,7 @@ This endpoint add the lists.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/list/add';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -129,28 +130,21 @@ lists | array | an array of JSON objects, respectively, that includes the list n
 
 ```json
 {
-  "code": 200,
-  "message": "New list created successfully.",
-  "result": [
-    {
-      "ID": 5,
-      "name": "list",
-      "type": "2",
-      "created_at": "2022-04-13 13:41:17",
-      "updated_at": null,
-      "data": null
-    },
-    {
-      "ID": 6,
-      "name": "list2",
-      "type": "2",
-      "created_at": "2022-04-13 13:41:17",
-      "updated_at": null,
-      "data": null
-    }
-  ],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "lists": [
+      {
+        "ID": 31,
+        "name": "bulkgate",
+        "type": "2",
+        "created_at": "2022-08-10 11:22:00",
+        "updated_at": null,
+        "data": null
+      }
+    ],
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -163,7 +157,7 @@ This endpoint update the list.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/list/update/{list_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -208,11 +202,15 @@ list | string | a JSON object, respectively, that includes the list name - <code
 
 ```json
 {
-  "code": 200,
-  "message": "List updated successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "lists": {
+      "ID": "31",
+      "name": "bulkgate2"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -225,7 +223,7 @@ This endpoint delete the List.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/list/delete/{list_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -263,10 +261,14 @@ Parameter | Type | Description | MANDATORY
 
 ```json
 {
-  "code": 200,
-  "message": "List deleted successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "lists": {
+      "ID": "31",
+      "name": "bulkgate2"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```

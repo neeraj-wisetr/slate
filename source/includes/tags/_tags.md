@@ -4,7 +4,7 @@ The tags API allows you to create, view, update, and delete individual, or a bat
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
-bwfan_public_api_key | string | Api key for authorization | YES
+api_key | string | Api key for authorization | YES
 
 ## Get All Tags
 
@@ -15,7 +15,7 @@ This endpoint retrieves all tags.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/tags';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -60,20 +60,25 @@ page | integer | Current page of the collection | NO.
 
 ```json
 {
-  "code": 200,
-  "message": "Tag(s) Listed successfully",
-  "result": [
-    {
-      "ID": 2,
-      "name": "nks2"
-    },
-    {
-      "ID": 1,
-      "name": "nks"
-    }
-  ],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "tags": [
+      {
+        "ID": 7,
+        "name": "xl nextmove"
+      },
+      {
+        "ID": 2,
+        "name": "nks2"
+      },
+      {
+        "ID": 1,
+        "name": "nks"
+      }
+    ],
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -86,7 +91,7 @@ This endpoint add the tags.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/tag/add';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -131,28 +136,21 @@ tags | array | an array of JSON objects, respectively, that includes the tag nam
 
 ```json
 {
-  "code": 200,
-  "message": "Tag(s) created successfully",
-  "result": [
-    {
-      "ID": 3,
-      "name": "tag",
-      "type": "1",
-      "created_at": "2022-04-13 12:22:06",
-      "updated_at": null,
-      "data": null
-    },
-    {
-      "ID": 4,
-      "name": "tag2",
-      "type": "1",
-      "created_at": "2022-04-13 12:22:06",
-      "updated_at": null,
-      "data": null
-    }
-  ],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "tags": [
+      {
+        "ID": 30,
+        "name": "bulkgate",
+        "type": "1",
+        "created_at": "2022-08-10 11:15:23",
+        "updated_at": null,
+        "data": null
+      }
+    ],
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -165,7 +163,7 @@ This endpoint update the tag.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/tag/update/{tag_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -210,11 +208,15 @@ tag | string | a JSON object, respectively, that includes the tag name - <code>{
 
 ```json
 {
-  "code": 200,
-  "message": "Tag updated successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "tags": {
+      "ID": "30",
+      "name": "Bulkgate2"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -227,7 +229,7 @@ This endpoint delete the tag.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/tag/delete/{tag_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -266,10 +268,14 @@ Parameter | Type | Description | Mandatory
 
 ```json
 {
-  "code": 200,
-  "message": "Tag deleted successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "tags": {
+      "ID": "30",
+      "name": "bulkgate"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```

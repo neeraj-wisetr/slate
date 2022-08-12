@@ -4,7 +4,7 @@ The fields API allows you to create, view, update, and delete individual, or a b
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
-bwfan_public_api_key | string | Api key for authorization | YES
+api_key | string | Api key for authorization | YES
 
 ## Get All Fields
 
@@ -15,7 +15,7 @@ This endpoint retrieves all fields.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/fields';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -60,81 +60,37 @@ page | integer | Current page of the collection | NO.
 
 ```json
 {
-  "code": 200,
-  "message": "Fields listed successfully",
-  "result": {
-    "1": {
-      "group_id": "0",
-      "ID": "1",
-      "name": "Address 1",
-      "type": "1",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "address-1"
-    },
-    "2": {
-      "group_id": "0",
-      "ID": "2",
-      "name": "Address 2",
-      "type": "1",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "address-2"
-    },
-    "3": {
-      "group_id": "0",
-      "ID": "3",
-      "name": "City",
-      "type": "1",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "city"
-    },
-    "4": {
-      "group_id": "0",
-      "ID": "4",
-      "name": "Pincode",
-      "type": "1",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "postcode"
-    },
-    "5": {
-      "group_id": "0",
-      "ID": "5",
-      "name": "Company",
-      "type": "1",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "company"
-    },
-    "6": {
-      "group_id": "0",
-      "ID": "6",
-      "name": "Gender",
-      "type": "4",
-      "meta": {
-        "options": [
-          "Male",
-          "Female",
-          "Other"
-        ]
+  "code": "success",
+  "data": {
+    "fields": {
+      "1": {
+        "group_id": "0",
+        "ID": "1",
+        "name": "Address 1",
+        "type": "1",
+        "meta": [],
+        "created_at": "2022-04-06 11:39:17",
+        "slug": "address-1"
       },
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "gender"
+      "2": {
+        "group_id": "0",
+        "ID": "6",
+        "name": "Gender",
+        "type": "4",
+        "meta": {
+          "options": [
+            "Male",
+            "Female",
+            "Other"
+          ]
+        },
+        "created_at": "2022-04-06 11:39:17",
+        "slug": "gender"
+      }
     },
-    "7": {
-      "group_id": "0",
-      "ID": "7",
-      "name": "Date of Birth",
-      "type": "7",
-      "meta": [],
-      "created_at": "2022-04-06 11:39:17",
-      "slug": "dob"
-    }
-  },
-  "limit": 30,
-  "offset": 0
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -147,7 +103,7 @@ This endpoint add the field.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/field/add';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -204,25 +160,26 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 
 ```json
 {
-  "code": 200,
-  "message": "Field created successfully",
-  "result": {
-    "ID": "19",
-    "name": "doa",
-    "slug": "doa",
-    "type": "7",
-    "gid": "0",
-    "meta": {
-      "placeholder": "Date of appoinment"
+  "code": "success",
+  "data": {
+    "fields": {
+      "ID": "36",
+      "name": "doa",
+      "slug": "doa",
+      "type": "7",
+      "gid": "0",
+      "meta": {
+        "placeholder": "Date of appoinment"
+      },
+      "mode": "1",
+      "vmode": "1",
+      "search": "1",
+      "view": "1",
+      "created_at": "2022-08-10 11:50:25"
     },
-    "mode": "1",
-    "vmode": "1",
-    "search": "1",
-    "view": "1",
-    "created_at": "2022-04-14 04:13:55"
-  },
-  "limit": 30,
-  "offset": 0
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -235,7 +192,7 @@ This endpoint update the field.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/field/update/{field_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -294,11 +251,15 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 
 ```json
 {
-  "code": 200,
-  "message": "Field updated successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "fields": {
+      "ID": "36",
+      "name": "doj"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
 
@@ -311,7 +272,7 @@ This endpoint delete the field.
 $site_url = 'http://example.com';
 $endpoint = '/wp-json/autonami/field/delete/{field_id}';
 $params = [
-    'bwfan_public_api_key' => 'your_api_key',
+    'api_key' => 'your_api_key',
 ];
 
 $query_string = http_build_query( $params );
@@ -348,10 +309,14 @@ Parameter | Type | Description | Mandatory
 
 ```json
 {
-  "code": 200,
-  "message": "Field deleted successfully",
-  "result": [],
-  "limit": 30,
-  "offset": 0
+  "code": "success",
+  "data": {
+    "fields": {
+      "ID": "36",
+      "name": "doj"
+    },
+    "limit": 0,
+    "offset": 0
+  }
 }
 ```
