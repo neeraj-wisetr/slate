@@ -1,6 +1,6 @@
 # Tags
 
-The tags API allows you to create, view, update, and delete individual, or a batch, of tags.
+The tags API allows you to create, view, update, and delete an individual, or a batch of tags.
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
@@ -8,7 +8,7 @@ api_key | string | Api key for authorization | YES
 
 ## Get All Tags
 
-This endpoint retrieves all tags.
+This endpoint returns the list of all the tags exist in an account.
 
 ```php
 <?php
@@ -84,7 +84,7 @@ page | integer | Current page of the collection | NO.
 
 ## Add Tags
 
-This endpoint add the tags.
+This endpoint adds a specific tag to the database.
 
 ```php
 <?php
@@ -156,7 +156,7 @@ tags | array | an array of JSON objects, respectively, that includes the tag nam
 
 ## Update A Tag
 
-This endpoint update the tag.
+This endpoint updates a particular tag.
 
 ```php
 <?php
@@ -222,12 +222,12 @@ tag | string | a JSON object, respectively, that includes the tag name - <code>{
 
 ## Delete A Tag
 
-This endpoint delete the tag.
+This endpoint permanently deletes a tag.
 
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/tag/delete/{tag_id}';
+$endpoint = '/wp-json/autonami/tag/{tag_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -257,8 +257,7 @@ echo $response;
 ```
 
 ### HTTP Request
-
-`DELETE http://example.com/wp-json/autonami/tag/delete/{tag_id}`
+`DELETE http://example.com/wp-json/autonami/tag/{tag_id}`
 
 Parameter | Type | Description | Mandatory
 --------- |------| ----------- | -----------

@@ -270,7 +270,7 @@ This endpoint delete the field.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/field/delete/{field_id}';
+$endpoint = '/wp-json/autonami/field/{field_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -300,7 +300,7 @@ echo $response;
 
 ### HTTP Request
 
-`DELETE http://example.com/wp-json/autonami/field/delete/{field_id}`
+`DELETE http://example.com/wp-json/autonami/field/{field_id}`
 
 Parameter | Type | Description | Mandatory
 --------- |------| ----------- | -----------

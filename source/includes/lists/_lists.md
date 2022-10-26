@@ -1,6 +1,6 @@
 # Lists
 
-The lists API allows you to create, view, update, and delete individual, or a batch, of lists.
+The Lists API allows you to create, view, update, and delete an individual, or a batch of lists.
 
 Parameter | Type   | Description | MANDATORY
 --------- |--------| ----------- | -----------
@@ -221,7 +221,7 @@ This endpoint delete the List.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/list/delete/{list_id}';
+$endpoint = '/wp-json/autonami/list/{list_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -252,7 +252,7 @@ echo $response;
 
 ### HTTP Request
 
-`DELETE http://example.com/wp-json/autonami/list/delete/{list_id}`
+`DELETE http://example.com/wp-json/autonami/list/{list_id}`
 
 Parameter | Type | Description | MANDATORY
 --------- |------| ----------- | -----------

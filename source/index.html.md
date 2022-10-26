@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - php
 
 toc_footers:
-  - <a href='https://github.com/neeraj-wisetr/slate'>Documentation Powered by Autonami</a>
+  - Documentation Powered by Autonami
 
 includes:
   - tags/tags
@@ -25,9 +25,8 @@ meta:
 
 # Introduction
 
-Welcome to the Autonami Public API! You can use our API to access Autonami Public API endpoints, which can manage autonami data in our database.
-
-We have language bindings in PHP! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Welcome to Autonami Public API! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access Autonami Public API endpoints, which manage the information in our database.
+To further assist you, we have provided code samples on the bottom right section of this page. You can switch the programming language of these examples with the tabs given in the top right.
 
 # Authentication
 
@@ -67,9 +66,8 @@ echo $response;
 
 > Make sure to replace `your_api_key` with your API key.
 
-Autonami Public API uses API keys to allow access to the API. New keys can be generated either through the WordPress admin interface or they can be auto-generated through an endpoint.
-
-Autonami Public API expects for the API key to be included in all API requests to the server in a query string that looks like the following:
+Autonami Public API uses API keys to allow access to it. New API keys can either be generated through the admin interface or auto-generated through an endpoint.
+Autonami Public API expects the API key to be included in all API requests to the server in a query string that looks like the following:
 
 Parameter | Type | Description | Mandatory
 --------- | ----------- | ----------- | -----------
@@ -79,4 +77,29 @@ api_key | String | your_api_key | YES
 You must replace <code>your_api_key</code> with your personal API key.
 </aside>
 
+> JSON response example:
+
+```json
+{
+  "code": "success",
+  "data": {
+    "tags": [
+      {
+        "ID": 1,
+        "name": "tag1"
+      },
+      {
+        "ID": 2,
+        "name": "tag2"
+      },
+      {
+        "ID": 3,
+        "name": "tag3"
+      }
+    ],
+    "limit": 0,
+    "offset": 0
+  }
+}
+```
 
