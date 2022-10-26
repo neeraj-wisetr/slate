@@ -5,7 +5,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - php
 
 toc_footers:
-  - Documentation Powered by Autonami
+  - Powered by FunnelKit Automations
 
 includes:
   - tags/tags
@@ -20,12 +20,12 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Autonami Public API
+    content: Documentation for the FunnelKit Automations Public API
 ---
 
 # Introduction
 
-Welcome to Autonami Public API! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access Autonami Public API endpoints, which manage the information in our database.
+Welcome to FunnelKit Automations Public API! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access FunnelKit Automations Public API endpoints, which manage the information in our database.
 To further assist you, we have provided code samples on the bottom right section of this page. You can switch the programming language of these examples with the tabs given in the top right.
 
 # Authentication
@@ -66,8 +66,8 @@ echo $response;
 
 > Make sure to replace `your_api_key` with your API key.
 
-Autonami Public API uses API keys to allow access to it. New API keys can either be generated through the admin interface or auto-generated through an endpoint.
-Autonami Public API expects the API key to be included in all API requests to the server in a query string that looks like the following:
+FunnelKit Automations Public API uses API keys to allow access to it. New API keys can either be generated through the admin interface or auto-generated through an endpoint.
+FunnelKit Automations Public API expects the API key to be included in all API requests to the server in a query string that looks like the following:
 
 Parameter | Type | Description | Mandatory
 --------- | ----------- | ----------- | -----------

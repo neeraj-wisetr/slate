@@ -1,6 +1,6 @@
 # Errors
 
-There are 7 types of errors in Autonami Public API:
+There are 7 types of errors in FunnelKit Automations Public API:
 
 
 Error Code | Error Type
