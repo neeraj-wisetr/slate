@@ -13,7 +13,7 @@ This endpoint retrieves all lists.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/lists';
+$endpoint = '/wp-json/funnelkit/lists';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -49,7 +49,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/autonami/lists`
+`GET http://example.com/wp-json/funnelkit/lists`
 
 Parameter | Type   | Description | MANDATORY
 --------- |--------| ----------- | -----------
@@ -84,7 +84,7 @@ This endpoint add the lists.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/list/add';
+$endpoint = '/wp-json/funnelkit/list/add';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -120,7 +120,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/autonami/list/add`
+`POST http://example.com/wp-json/funnelkit/list/add`
 
 Parameter | Type  | Description | MANDATORY
 --------- |-------| ----------- | -----------
@@ -155,7 +155,7 @@ This endpoint update the list.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/list/update/{list_id}';
+$endpoint = '/wp-json/funnelkit/list/update/{list_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -192,7 +192,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/autonami/list/update/{list_id}`
+`POST http://example.com/wp-json/funnelkit/list/update/{list_id}`
 
 Parameter | Type   | Description | MANDATORY
 --------- |--------| ----------- | -----------
@@ -221,7 +221,7 @@ This endpoint delete the List.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/list/{list_id}';
+$endpoint = '/wp-json/funnelkit/list/{list_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -252,7 +252,7 @@ echo $response;
 
 ### HTTP Request
 
-`DELETE http://example.com/wp-json/autonami/list/{list_id}`
+`DELETE http://example.com/wp-json/funnelkit/list/{list_id}`
 
 Parameter | Type | Description | MANDATORY
 --------- |------| ----------- | -----------

@@ -13,7 +13,7 @@ This endpoint retrieves all contacts.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contacts';
+$endpoint = '/wp-json/funnelkit/contacts';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -43,7 +43,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/autonami/contacts`
+`GET http://example.com/wp-json/funnelkit/contacts`
 
 Parameter | Type | Description                                                                                           | Mandatory
 --------- |------|-------------------------------------------------------------------------------------------------------| -----------
@@ -123,9 +123,11 @@ This endpoint retrieves contact detail of specified id or email
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact';
+$endpoint = '/wp-json/funnelkit/contact';
 $params = [
     'api_key' => 'your_api_key',
+    'id'      => 123,
+    'email'   => 'abc@gmail.com'
 ];
 
 $query_string = http_build_query( $params );
@@ -154,7 +156,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/autonami/contact`
+`GET http://example.com/wp-json/funnelkit/contact`
 
 Parameter | Type | Description          | Mandatory
 --------- |------|----------------------| -----------
@@ -162,7 +164,7 @@ id  | integer | Id of the contact | NO
 email | string | Email of the contact | NO
 
 <aside class="notice">
-One of the id or email need to be provided.
+One of the id or email need to be provided. If provided both, then contact will be fetched by id
 </aside>
 
 > JSON response example:
@@ -207,7 +209,7 @@ One of the id or email need to be provided.
             "ms_global_tables": [
               "blogs",
               "blogmeta",
-              "signups",
+              "signups"
             ],
             "comments": "wp_comments",
             "commentmeta": "wp_commentmeta",
@@ -415,7 +417,7 @@ This endpoint add a contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/add';
+$endpoint = '/wp-json/funnelkit/contact/add';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -463,7 +465,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/add`
+`POST http://example.com/wp-json/funnelkit/contact/add`
 
 Parameter | Type | Description                                                                                                         | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------------------------------------|--------- 
@@ -508,7 +510,7 @@ source | string | Contact is getting created from.</br> Default is public_api   
               "posts",
               "comments",
               "links",
-              "options",
+              "options"
             ],
             "old_tables": [
               "categories",
@@ -522,7 +524,7 @@ source | string | Contact is getting created from.</br> Default is public_api   
             "ms_global_tables": [
               "blogs",
               "blogmeta",
-              "signups",
+              "signups"
             ],
             "comments": "wp_comments",
             "commentmeta": "wp_commentmeta",
@@ -696,7 +698,7 @@ This endpoint update a contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/update/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/update/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -742,7 +744,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/update/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/update/{contact_id}`
 
 Parameter | Type | Description                                                                                                         | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------------------------------------|--------- 
@@ -786,7 +788,7 @@ source | string | Contact is getting created from.</br> Default is public_api   
             "tables": [
               "posts",
               "comments",
-              "links",
+              "links"
             ],
             "old_tables": [
               "categories",
@@ -1008,7 +1010,7 @@ This endpoint update the email of the contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/update-email/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/update-email/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1045,7 +1047,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/update-email/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/update-email/{contact_id}`
 
 Parameter | Type | Description | Mandatory
 ----- |---------|------------|--------- 
@@ -1080,7 +1082,7 @@ email | string | Email for the contact | YES
               "posts",
               "comments",
               "links",
-              "options",
+              "options"
             ],
             "old_tables": [
               "categories",
@@ -1302,7 +1304,7 @@ This endpoint change the status of the contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/change-status/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/change-status/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1339,7 +1341,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/change-status/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/change-status/{contact_id}`
 
 Parameter | Type | Description                                                                           | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------|--------- 
@@ -1373,7 +1375,7 @@ status | string | Status for the contact<code>unverified, </br>subscribed, bounc
             "tables": [
               "posts",
               "comments",
-              "links",
+              "links"
             ],
             "old_tables": [
               "categories",
@@ -1595,7 +1597,7 @@ This endpoint assign the tags to the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/tag-assign/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/tag-assign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1632,7 +1634,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/tag-assign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/tag-assign/{contact_id}`
 
 Parameter | Type | Description                                 | Mandatory
 ----- |---------|---------------------------------------------|---------
@@ -1672,7 +1674,7 @@ This endpoint unassign the tags from the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/tag-unassign/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/tag-unassign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1709,7 +1711,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/tag-unassign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/tag-unassign/{contact_id}`
 
 Parameter | Type | Description                                 | Mandatory
 ----- |---------|---------------------------------------------|---------
@@ -1745,7 +1747,7 @@ This endpoint assign the lists to the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/list-assign/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/list-assign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1782,7 +1784,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/list-assign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/list-assign/{contact_id}`
 
 Parameter | Type | Description                                  | Mandatory
 ----- |---------|----------------------------------------------|---------
@@ -1814,7 +1816,7 @@ This endpoint unassign the lists from the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/list-unassign/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/list-unassign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1851,7 +1853,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/autonami/contact/list-unassign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit/contact/list-unassign/{contact_id}`
 
 Parameter | Type | Description                                  | Mandatory
 ----- |---------|----------------------------------------------|---------
@@ -1883,7 +1885,7 @@ This endpoint delete a contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/contact/{contact_id}';
+$endpoint = '/wp-json/funnelkit/contact/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1914,7 +1916,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`DELETE http://example.com/wp-json/autonami/contact/{contact_id}`
+`DELETE http://example.com/wp-json/funnelkit/contact/{contact_id}`
 
 Parameter | Type  | Description | Mandatory
 ----- |-------|-------------|----------

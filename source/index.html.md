@@ -35,7 +35,7 @@ To further assist you, we have provided code samples on the bottom right section
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/autonami/tags';
+$endpoint = '/wp-json/funnelkit/tags';
 $params = [
     'api_key' => 'your_api_key',
 ];
