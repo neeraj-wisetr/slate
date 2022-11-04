@@ -13,7 +13,7 @@ This endpoint retrieves all contacts.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contacts';
+$endpoint = '/wp-json/funnelkit-automations/contacts';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -43,7 +43,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/funnelkit/contacts`
+`GET http://example.com/wp-json/funnelkit-automations/contacts`
 
 Parameter | Type | Description                                                                                           | Mandatory
 --------- |------|-------------------------------------------------------------------------------------------------------| -----------
@@ -123,7 +123,7 @@ This endpoint retrieves contact detail of specified id or email
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact';
+$endpoint = '/wp-json/funnelkit-automations/contact';
 $params = [
     'api_key' => 'your_api_key',
     'id'      => 123,
@@ -156,7 +156,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/funnelkit/contact`
+`GET http://example.com/wp-json/funnelkit-automations/contact`
 
 Parameter | Type | Description          | Mandatory
 --------- |------|----------------------| -----------
@@ -417,7 +417,7 @@ This endpoint add a contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/add';
+$endpoint = '/wp-json/funnelkit-automations/contact/add';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -465,7 +465,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/add`
+`POST http://example.com/wp-json/funnelkit-automations/contact/add`
 
 Parameter | Type | Description                                                                                                         | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------------------------------------|--------- 
@@ -698,7 +698,7 @@ This endpoint update a contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/update/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/update/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -744,7 +744,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/update/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/update/{contact_id}`
 
 Parameter | Type | Description                                                                                                         | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------------------------------------|--------- 
@@ -1010,7 +1010,7 @@ This endpoint update the email of the contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/update-email/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/update-email/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1047,7 +1047,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/update-email/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/update-email/{contact_id}`
 
 Parameter | Type | Description | Mandatory
 ----- |---------|------------|--------- 
@@ -1304,7 +1304,7 @@ This endpoint change the status of the contact
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/change-status/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/change-status/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1341,7 +1341,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/change-status/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/change-status/{contact_id}`
 
 Parameter | Type | Description                                                                           | Mandatory
 ----- |---------|---------------------------------------------------------------------------------------|--------- 
@@ -1597,7 +1597,7 @@ This endpoint assign the tags to the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/tag-assign/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/tag-assign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1634,7 +1634,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/tag-assign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/tag-assign/{contact_id}`
 
 Parameter | Type | Description                                 | Mandatory
 ----- |---------|---------------------------------------------|---------
@@ -1674,7 +1674,7 @@ This endpoint unassign the tags from the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/tag-unassign/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/tag-unassign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1711,7 +1711,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/tag-unassign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/tag-unassign/{contact_id}`
 
 Parameter | Type | Description                                 | Mandatory
 ----- |---------|---------------------------------------------|---------
@@ -1747,7 +1747,7 @@ This endpoint assign the lists to the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/list-assign/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/list-assign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1784,7 +1784,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/list-assign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/list-assign/{contact_id}`
 
 Parameter | Type | Description                                  | Mandatory
 ----- |---------|----------------------------------------------|---------
@@ -1816,7 +1816,7 @@ This endpoint unassign the lists from the contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/list-unassign/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/list-unassign/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1853,7 +1853,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`POST http://example.com/wp-json/funnelkit/contact/list-unassign/{contact_id}`
+`POST http://example.com/wp-json/funnelkit-automations/contact/list-unassign/{contact_id}`
 
 Parameter | Type | Description                                  | Mandatory
 ----- |---------|----------------------------------------------|---------
@@ -1885,7 +1885,7 @@ This endpoint delete a contact.
 <?php
 
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/contact/{contact_id}';
+$endpoint = '/wp-json/funnelkit-automations/contact/{contact_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -1916,7 +1916,7 @@ echo $response;
 
 ### HTTP REQUEST
 
-`DELETE http://example.com/wp-json/funnelkit/contact/{contact_id}`
+`DELETE http://example.com/wp-json/funnelkit-automations/contact/{contact_id}`
 
 Parameter | Type  | Description | Mandatory
 ----- |-------|-------------|----------

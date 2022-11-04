@@ -13,7 +13,7 @@ This endpoint retrieves all fields.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/fields';
+$endpoint = '/wp-json/funnelkit-automations/fields';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -49,7 +49,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/funnelkit/fields`
+`GET http://example.com/wp-json/funnelkit-automations/fields`
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
@@ -101,7 +101,7 @@ This endpoint add the field.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/field/add';
+$endpoint = '/wp-json/funnelkit-automations/field/add';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -143,7 +143,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/funnelkit/field/add`
+`POST http://example.com/wp-json/funnelkit-automations/field/add`
 
 Parameter | Type    | Description | Mandatory
 --------- |---------| ----------- | -----------
@@ -190,7 +190,7 @@ This endpoint update the field.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/field/update/{field_id}';
+$endpoint = '/wp-json/funnelkit-automations/field/update/{field_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -233,7 +233,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/funnelkit/field/update/{field_id}`
+`POST http://example.com/wp-json/funnelkit-automations/field/update/{field_id}`
 
 Parameter | Type    | Description | Mandatory
 --------- |---------| ----------- | -----------
@@ -270,7 +270,7 @@ This endpoint delete the field.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/field/{field_id}';
+$endpoint = '/wp-json/funnelkit-automations/field/{field_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -300,7 +300,7 @@ echo $response;
 
 ### HTTP Request
 
-`DELETE http://example.com/wp-json/funnelkit/field/{field_id}`
+`DELETE http://example.com/wp-json/funnelkit-automations/field/{field_id}`
 
 Parameter | Type | Description | Mandatory
 --------- |------| ----------- | -----------

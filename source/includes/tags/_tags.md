@@ -13,7 +13,7 @@ This endpoint returns the list of all the tags exist in an account.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/tags';
+$endpoint = '/wp-json/funnelkit-automations/tags';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -49,7 +49,7 @@ echo $response;
 
 ### HTTP Request
 
-`GET http://example.com/wp-json/funnelkit/tags`
+`GET http://example.com/wp-json/funnelkit-automations/tags`
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
@@ -89,7 +89,7 @@ This endpoint adds a specific tag to the database.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/tag/add';
+$endpoint = '/wp-json/funnelkit-automations/tag/add';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -125,7 +125,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/funnelkit/tag/add`
+`POST http://example.com/wp-json/funnelkit-automations/tag/add`
 
 Parameter | Type  | Description | Mandatory
 --------- |-------| ----------- | -----------
@@ -161,7 +161,7 @@ This endpoint updates a particular tag.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/tag/update/{tag_id}';
+$endpoint = '/wp-json/funnelkit-automations/tag/update/{tag_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -197,7 +197,7 @@ echo $response;
 
 ### HTTP Request
 
-`POST http://example.com/wp-json/funnelkit/tag/update/{tag_id}`
+`POST http://example.com/wp-json/funnelkit-automations/tag/update/{tag_id}`
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
@@ -227,7 +227,7 @@ This endpoint permanently deletes a tag.
 ```php
 <?php
 $site_url = 'http://example.com';
-$endpoint = '/wp-json/funnelkit/tag/{tag_id}';
+$endpoint = '/wp-json/funnelkit-automations/tag/{tag_id}';
 $params = [
     'api_key' => 'your_api_key',
 ];
@@ -257,7 +257,7 @@ echo $response;
 ```
 
 ### HTTP Request
-`DELETE http://example.com/wp-json/funnelkit/tag/{tag_id}`
+`DELETE http://example.com/wp-json/funnelkit-automations/tag/{tag_id}`
 
 Parameter | Type | Description | Mandatory
 --------- |------| ----------- | -----------
