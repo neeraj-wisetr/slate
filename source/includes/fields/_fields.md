@@ -8,7 +8,7 @@ api_key | string | Api key for authorization | YES
 
 ## Get All Fields
 
-This endpoint retrieves all fields.
+Returns the list of all the fields.
 
 ```php
 <?php
@@ -53,7 +53,7 @@ echo $response;
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
-page | integer | Current page of the collection | NO.
+page | integer | Current page of the collection | NO
 
 
 > JSON response example:
@@ -96,7 +96,7 @@ page | integer | Current page of the collection | NO.
 
 ## Add Field
 
-This endpoint add the field.
+Adds a specific field.
 
 ```php
 <?php
@@ -185,7 +185,7 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 
 ## Update A Field
 
-This endpoint update the field.
+Updates a particular field.
 
 ```php
 <?php
@@ -265,7 +265,7 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 
 ## Delete A Field
 
-This endpoint delete the field.
+Deletes a field permanently.
 
 ```php
 <?php

@@ -8,7 +8,7 @@ api_key | string | Api key for authorization | YES
 
 ## Get All Lists
 
-This endpoint retrieves all lists.
+Returns all the lists.
 
 ```php
 <?php
@@ -53,7 +53,7 @@ echo $response;
 
 Parameter | Type   | Description | MANDATORY
 --------- |--------| ----------- | -----------
-page | integer | Current page of the collection | NO.
+page | integer | Current page of the collection | NO
 
 > JSON response example:
 
@@ -79,7 +79,7 @@ page | integer | Current page of the collection | NO.
 
 ## Add Lists
 
-This endpoint add the lists.
+Adds a specific list.
 
 ```php
 <?php
@@ -150,7 +150,7 @@ lists | array | an array of JSON objects, respectively, that includes the list n
 
 ## Update A List
 
-This endpoint update the list.
+Updates a particular list.
 
 ```php
 <?php
@@ -216,7 +216,7 @@ list | string | a JSON object, respectively, that includes the list name - <code
 
 ## Delete A List
 
-This endpoint delete the List.
+Deletes a list permanently.
 
 ```php
 <?php

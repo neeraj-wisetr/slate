@@ -8,7 +8,7 @@ api_key | string | Api key for authorization | YES
 
 ## Get All Contacts
 
-This endpoint retrieves all contacts.
+Returns the list of all the contacts.
 
 ```php
 <?php
@@ -118,7 +118,7 @@ list | array | array of list id <code>[id1,id2,...]</code>                      
 
 ## Get Contact by ID or Email
 
-This endpoint retrieves contact detail of specified id or email
+Returns contact details of specified id or email.
 
 ```php
 <?php
@@ -164,7 +164,7 @@ id  | integer | Id of the contact | NO
 email | string | Email of the contact | NO
 
 <aside class="notice">
-One of the id or email need to be provided. If provided both, then contact will be fetched by id
+One of the id or email need to be provided. If provided both, then contact will be fetched by id.
 </aside>
 
 > JSON response example:
@@ -411,7 +411,7 @@ One of the id or email need to be provided. If provided both, then contact will 
 
 ## Add Contact
 
-This endpoint add a contact
+Adds a specific contact.
 
 ```php
 <?php
@@ -692,7 +692,7 @@ source | string | Contact is getting created from.</br> Default is public_api   
 
 ## Update a Contact
 
-This endpoint update a contact
+Updates a particular contact.
 
 ```php
 <?php
@@ -1004,7 +1004,7 @@ source | string | Contact is getting created from.</br> Default is public_api   
 
 ## Update Eamil
 
-This endpoint update the email of the contact
+Updates email of the contact
 
 ```php
 <?php
@@ -1298,7 +1298,7 @@ email | string | Email for the contact | YES
 
 ## Change Status
 
-This endpoint change the status of the contact
+Updates status of the contact
 
 ```php
 <?php
@@ -1343,9 +1343,9 @@ echo $response;
 
 `POST http://example.com/wp-json/funnelkit-automations/contact/change-status/{contact_id}`
 
-Parameter | Type | Description                                                                           | Mandatory
------ |---------|---------------------------------------------------------------------------------------|--------- 
-status | string | Status for the contact<code>unverified, </br>subscribed, bounced, unsubscribed</code> | YES
+Parameter | Type | Description                                                                                | Mandatory
+----- |---------|--------------------------------------------------------------------------------------------|--------- 
+status | string | Status for the contact</br><code>unverified, subscribed, bounced, </br>unsubscribed</code> | YES
 
 > JSON response example:
 
@@ -1591,7 +1591,7 @@ status | string | Status for the contact<code>unverified, </br>subscribed, bounc
 
 ## Assign Tags
 
-This endpoint assign the tags to the contact.
+Assign tags to the contact.
 
 ```php
 <?php
@@ -1668,7 +1668,7 @@ tags | array | array of tag ids <code>[id1,id2,...]</code> | YES
 
 ## Unassign Tags
 
-This endpoint unassign the tags from the contact.
+Unassign tags from the contact.
 
 ```php
 <?php
@@ -1741,7 +1741,7 @@ tagId | array | array of tag ids <code>[id1,id2,...]</code> | YES
 
 ## Assign Lists
 
-This endpoint assign the lists to the contact.
+Assign lists to the contact.
 
 ```php
 <?php
@@ -1810,7 +1810,7 @@ lists | array | array of list ids <code>[id1,id2,...]</code> | YES
 
 ## Unassign Lists
 
-This endpoint unassign the lists from the contact.
+Unassign lists from the contact.
 
 ```php
 <?php
@@ -1879,7 +1879,7 @@ listId | array | array of list ids <code>[id1,id2,...]</code> | YES
 
 ## Delete a contact
 
-This endpoint delete a contact.
+Deletes a contact permanently.
 
 ```php
 <?php

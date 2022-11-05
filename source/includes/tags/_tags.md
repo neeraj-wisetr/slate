@@ -8,7 +8,7 @@ api_key | string | Api key for authorization | YES
 
 ## Get All Tags
 
-This endpoint returns the list of all the tags exist in an account.
+Returns the list of all the tags.
 
 ```php
 <?php
@@ -53,7 +53,7 @@ echo $response;
 
 Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
-page | integer | Current page of the collection | NO.
+page | integer | Current page of the collection | NO
 
 
 > JSON response example:
@@ -84,7 +84,7 @@ page | integer | Current page of the collection | NO.
 
 ## Add Tags
 
-This endpoint adds a specific tag to the database.
+Adds a specific tag.
 
 ```php
 <?php
@@ -156,7 +156,7 @@ tags | array | an array of JSON objects, respectively, that includes the tag nam
 
 ## Update A Tag
 
-This endpoint updates a particular tag.
+Updates a particular tag.
 
 ```php
 <?php
@@ -222,7 +222,7 @@ tag | string | a JSON object, respectively, that includes the tag name - <code>{
 
 ## Delete A Tag
 
-This endpoint permanently deletes a tag.
+Deletes a tag permanently.
 
 ```php
 <?php
