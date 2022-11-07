@@ -67,7 +67,6 @@ Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
 page | integer | Current page of the collection | NO
 
-
 > JSON response example:
 
 ```json
@@ -154,7 +153,6 @@ Parameter | Type  | Description | Mandatory
 --------- |-------| ----------- | -----------
 tags | array | an array of JSON objects, respectively, that includes the tag name - <code>{"tags": ["tag","tag2", ...]}</code> | YES
 
-
 > JSON response example:
 
 ```json
@@ -239,7 +237,6 @@ Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
 tag | string | a JSON object, respectively, that includes the tag name - <code>{"tag": "tag_name"}</code> | YES
 
-
 > JSON response example:
 
 ```json
@@ -302,11 +299,11 @@ echo $response;
 ```
 
 ### HTTP Request
+
 `DELETE http://example.com/wp-json/funnelkit-automations/tag/{tag_id}`
 
 Parameter | Type | Description | Mandatory
 --------- |------| ----------- | -----------
-
 
 > JSON response example:
 

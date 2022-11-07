@@ -225,7 +225,6 @@ echo $response;
 ?>
 ```
 
-
 ### HTTP Request
 
 `POST http://example.com/wp-json/funnelkit-automations/list/update/{list_id}`

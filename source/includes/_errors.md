@@ -2,7 +2,6 @@
 
 There are 7 types of errors in FunnelKit Automations Public API:
 
-
 Error Code | Error Type
 ---------- | -------
 400 | Bad Request -- Your request is invalid
@@ -36,6 +35,7 @@ Error Code | Error Type
   "message": "API key does not have this permission."
 }
 ```
+
 ```json
 {
   "code": "api_key_inactive",
@@ -56,6 +56,7 @@ Error Code | Error Type
   "message": "Some arguments are required which are missing"
 }
 ```
+
 ```json
 {
   "code": "email_invalid",

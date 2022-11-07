@@ -67,7 +67,6 @@ Parameter | Type   | Description | Mandatory
 --------- |--------| ----------- | -----------
 page | integer | Current page of the collection | NO
 
-
 > JSON response example:
 
 ```json
