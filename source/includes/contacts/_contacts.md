@@ -10,6 +10,16 @@ api_key | string | Api key for authorization | YES
 
 Returns the list of all the contacts.
 
+```shell
+Get All Contacts
+GET http://example.com/wp-json/funnelkit-automations/contacts
+
+    curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/contacts' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw ''
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -119,6 +129,18 @@ list | array | array of list id <code>[id1,id2,...]</code>                      
 ## Get Contact by ID or Email
 
 Returns contact details of specified id or email.
+
+```shell
+Get Contact by ID or Email
+GET http://example.com/wp-json/funnelkit-automations/contact
+
+    curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/contact' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --header 'id: 123' \
+    --header 'email: abc@gmail.com' \
+    --data-raw ''
+```
 
 ```php
 <?php
@@ -413,6 +435,29 @@ One of the id or email need to be provided. If provided both, then contact will 
 
 Adds a specific contact.
 
+```shell
+Add Contact
+POST http://example.com/wp-json/funnelkit-automations/contact/add
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/contact/add' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email":"abc@wisetr.com",
+        "f_name": "abc",
+        "l_name": "test",
+        "contact_no": "1234567890",
+        "country": "IN",
+        "state": "Delhi",
+        "status": "subscribed",
+        "tags": [314,315],
+        "lists": [310,316],
+        "fields": {
+            "40":"20-11-1993",
+            "6": "Male"
+        }
+    }' 
+```
+
 ```php
 <?php
 
@@ -693,6 +738,26 @@ source | string | Contact is getting created from.</br> Default is public_api   
 ## Update a Contact
 
 Updates a particular contact.
+
+```shell
+Update a Contact
+POST http://example.com/wp-json/funnelkit-automations/contact/update/{contact_id}
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/contact/update/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email":"abc@wisetr.com",
+        "f_name": "abc",
+        "l_name": "test",
+        "contact_no": "1234567890",
+        "country": "IN",
+        "state": "Delhi",
+        "status": "unsubscribed",
+        "fields": {
+            "6": "Male"
+        }
+    }'
+```
 
 ```php
 <?php
@@ -1006,6 +1071,17 @@ source | string | Contact is getting created from.</br> Default is public_api   
 
 Updates email of the contact
 
+```shell
+Update Eamil
+POST http://example.com/wp-json/funnelkit-automations/contact/update-email/{contact_id}
+    curl --location --request POST 'POST http://example.com/wp-json/funnelkit-automations/contact/update-email/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email": "ronit123@wisetr.com"
+    }'
+```
+
 ```php
 <?php
 
@@ -1300,6 +1376,18 @@ email | string | Email for the contact | YES
 
 Updates status of the contact
 
+```shell
+Change Status
+POST http://example.com/wp-json/funnelkit-automations/contact/change-status/{contact_id}
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/contact/change-status/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "status":"subscribe"
+    }'
+
+```
+
 ```php
 <?php
 
@@ -1593,6 +1681,17 @@ status | string | Status for the contact</br><code>unverified, subscribed, bounc
 
 Assign tags to the contact.
 
+```shell
+Assign Tags
+POST http://example.com/wp-json/funnelkit-automations/contact/tag-assign/{contact_id}
+    curl --location -g --request POST 'http://example.com/wp-json/funnelkit-automations/contact/tag-assign/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "tags":[1,2]
+    }'
+```
+
 ```php
 <?php
 
@@ -1670,6 +1769,17 @@ tags | array | array of tag ids <code>[id1,id2,...]</code> | YES
 
 Unassign tags from the contact.
 
+```shell
+Unassign Tags
+POST http://example.com/wp-json/funnelkit-automations/contact/tag-unassign/{contact_id}
+    curl --location -g --request POST 'http://example.com/wp-json/funnelkit-automations/contact/tag-unassign/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "tagId": [1]
+    }' 
+```
+
 ```php
 <?php
 
@@ -1743,6 +1853,17 @@ tagId | array | array of tag ids <code>[id1,id2,...]</code> | YES
 
 Assign lists to the contact.
 
+```shell
+Assign Lists
+POST http://example.com/wp-json/funnelkit-automations/contact/list-assign/{contact_id}
+    curl --location -g --request POST 'http://example.com/wp-json/funnelkit-automations/contact/list-assign/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "lists": [4]
+    }'
+```
+
 ```php
 <?php
 
@@ -1812,6 +1933,17 @@ lists | array | array of list ids <code>[id1,id2,...]</code> | YES
 
 Unassign lists from the contact.
 
+```shell
+Unassign Lists
+POST http://example.com/wp-json/funnelkit-automations/contact/list-unassign/{contact_id}
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/contact/list-unassign/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "listId": [4]
+    }'
+```
+
 ```php
 <?php
 
@@ -1880,6 +2012,15 @@ listId | array | array of list ids <code>[id1,id2,...]</code> | YES
 ## Delete a contact
 
 Deletes a contact permanently.
+
+```shell
+Delete a contact
+DELETE http://example.com/wp-json/funnelkit-automations/contact/{contact_id}
+    curl --location -g --request DELETE 'http://example.com/wp-json/funnelkit-automations/contact/{contact_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw ''  
+```
 
 ```php
 <?php

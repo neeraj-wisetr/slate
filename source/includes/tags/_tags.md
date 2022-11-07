@@ -10,6 +10,18 @@ api_key | string | Api key for authorization | YES
 
 Returns the list of all the tags.
 
+```shell
+Get All Tags
+GET http://example.com/wp-json/funnelkit-automations/tags
+
+    curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/tags' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "page": 1
+    }'
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -86,6 +98,17 @@ page | integer | Current page of the collection | NO
 
 Adds a specific tag.
 
+```shell
+Add Tags
+POST http://example.com/wp-json/funnelkit-automations/tag/add
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/tag/add' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '
+    { "tags": ["tag","tag2"]
+    }'
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -158,6 +181,19 @@ tags | array | an array of JSON objects, respectively, that includes the tag nam
 
 Updates a particular tag.
 
+```shell
+Update A Tag
+POST http://example.com/wp-json/funnelkit-automations/tag/update/{tag_id}
+
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/tag/update/{tag_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "tag": "tag_name"
+    }'
+
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -223,6 +259,15 @@ tag | string | a JSON object, respectively, that includes the tag name - <code>{
 ## Delete A Tag
 
 Deletes a tag permanently.
+
+```shell
+Delete A Tag
+DELETE http://example.com/wp-json/funnelkit-automations/tag/{tag_id}
+
+    curl --location --request DELETE 'http://example.com/wp-json/funnelkit-automations/tag/{tag_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+```
 
 ```php
 <?php

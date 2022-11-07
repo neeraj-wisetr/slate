@@ -10,6 +10,18 @@ api_key | string | Api key for authorization | YES
 
 Returns the list of all the fields.
 
+```shell
+Get All Fields
+GET http://example.com/wp-json/funnelkit-automations/fields
+
+    curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/fields' \
+    --header 'api_key:{api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "page": 1
+    }'
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -97,6 +109,23 @@ page | integer | Current page of the collection | NO
 ## Add Field
 
 Adds a specific field.
+
+```shell
+Add Field
+POST http://example.com/wp-json/funnelkit-automations/field/add
+
+    curl --location --request POST 'wp-json/funnelkit-automations/field/add' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "field_name": "doa",
+        "type": 7,
+        "placeholder": "Date of appoinment",
+        "mode": 1,
+        "vmode": 1,
+        "search": 1
+    }'
+```
 
 ```php
 <?php
@@ -187,6 +216,24 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 
 Updates a particular field.
 
+```shell
+Update A Field
+POST http://example.com/wp-json/funnelkit-automations/field/update/{field_id}
+
+    curl --location --request POST 'http://example.com/wp-json/funnelkit-automations/field/update/{field_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "slug":"doa",
+    "field_name": "doj",
+        "type": 7,
+        "placeholder": "Date of joining",
+        "mode": 1,
+        "vmode": 1,
+        "search": 1
+    }'
+```
+
 ```php
 <?php
 $site_url = 'http://example.com';
@@ -266,6 +313,16 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
 ## Delete A Field
 
 Deletes a field permanently.
+
+```shell
+Delete A Field
+DELETE http://example.com/wp-json/funnelkit-automations/field/{field_id}
+
+    curl --location --request DELETE 'http://example.com/wp-json/funnelkit-automations/field/{field_id}' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw ''
+```
 
 ```php
 <?php

@@ -2,7 +2,8 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - PHP
+  - shell
+  - php
 
 toc_footers:
   - Powered by FunnelKit
@@ -26,11 +27,23 @@ meta:
 # Introduction
 
 Welcome to FunnelKit Automations Public API! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access FunnelKit Automations Public API endpoints, which manage the information in our database.
-To further assist you, we have provided code samples on the bottom right section of this page.
+To further assist you, we have provided code samples on the bottom right section of this page. You can switch the programming language of these examples with the tabs given in the top right.
 
 # Authentication
 
 > Example of how to use api key with endpoint:
+
+```shell
+Get All Tags
+GET http://example.com/wp-json/funnelkit-automations/tags
+
+    curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/tags' \
+    --header 'api_key: {api-key}' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "page": 1
+    }'
+```
 
 ```php
 <?php
