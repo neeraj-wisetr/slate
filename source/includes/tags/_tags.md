@@ -75,16 +75,12 @@ page | integer | Current page of the collection | NO
   "data": {
     "tags": [
       {
-        "ID": 7,
-        "name": "xl nextmove"
+        "ID": 1,
+        "name": "Tag 1"
       },
       {
         "ID": 2,
-        "name": "nks2"
-      },
-      {
-        "ID": 1,
-        "name": "nks"
+        "name": "Tag 2"
       }
     ],
     "limit": 0,
@@ -104,7 +100,7 @@ POST http://example.com/wp-json/funnelkit-automations/tag/add
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '
-    { "tags": ["tag","tag2"]
+    { "tags": ["Tag 1","Tag 2"]
     }'
 ```
 
@@ -131,7 +127,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "tags": ["tag","tag2"]
+    "tags": ["Tag 1","Tag 2"]
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -161,8 +157,16 @@ tags | array | an array of JSON objects, respectively, that includes the tag nam
   "data": {
     "tags": [
       {
-        "ID": 30,
-        "name": "bulkgate",
+        "ID": 1,
+        "name": "Tag 1",
+        "type": "1",
+        "created_at": "2022-08-10 11:15:23",
+        "updated_at": null,
+        "data": null
+      },
+      {
+        "ID": 2,
+        "name": "Tag 2",
         "type": "1",
         "created_at": "2022-08-10 11:15:23",
         "updated_at": null,
@@ -187,7 +191,7 @@ POST http://example.com/wp-json/funnelkit-automations/tag/update/{tag_id}
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "tag": "tag_name"
+        "tag": "Tag_name"
     }'
 
 ```
@@ -215,7 +219,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "tag": "tag_name"
+    "tag": "Tag_name"
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -244,8 +248,8 @@ tag | string | a JSON object, respectively, that includes the tag name - <code>{
   "code": "success",
   "data": {
     "tags": {
-      "ID": "30",
-      "name": "Bulkgate2"
+      "ID": "1",
+      "name": "Tag_name"
     },
     "limit": 0,
     "offset": 0
@@ -312,8 +316,8 @@ Parameter | Type | Description | Mandatory
   "code": "success",
   "data": {
     "tags": {
-      "ID": "30",
-      "name": "bulkgate"
+      "ID": "1",
+      "name": "Tag_name"
     },
     "limit": 0,
     "offset": 0

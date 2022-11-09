@@ -77,16 +77,16 @@ page | integer | Current page of the collection | NO
       "1": {
         "group_id": "0",
         "ID": "1",
-        "name": "Address 1",
+        "name": "Custom Field 1",
         "type": "1",
         "meta": [],
         "created_at": "2022-04-06 11:39:17",
-        "slug": "address-1"
+        "slug": "Custom Field 1"
       },
       "2": {
         "group_id": "0",
-        "ID": "6",
-        "name": "Gender",
+        "ID": "2",
+        "name": "Custom Field 2",
         "type": "4",
         "meta": {
           "options": [
@@ -96,7 +96,7 @@ page | integer | Current page of the collection | NO
           ]
         },
         "created_at": "2022-04-06 11:39:17",
-        "slug": "gender"
+        "slug": "Custom Field 2"
       }
     },
     "limit": 0,
@@ -117,11 +117,10 @@ POST http://example.com/wp-json/funnelkit-automations/field/add
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "field_name": "doa",
+        "field_name": "custom_field",
         "type": 7,
-        "placeholder": "Date of appoinment",
+        "placeholder": "Custom Field",
         "mode": 1,
-        "vmode": 1,
         "search": 1
     }'
 ```
@@ -149,11 +148,10 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "field_name": "doa",
+    "field_name": "custom_field",
     "type": 7,
-    "placeholder": "Date of appoinment",
+    "placeholder": "Custom Field",
     "mode": 1,
-    "vmode": 1,
     "search": 1
 }',
   CURLOPT_HTTPHEADER => array(
@@ -180,7 +178,6 @@ group_id | integer | Field group id. Default is 0 | NO
 type | integer | Input type. <code></br>1 - text, </br>2 - number,</br>3 - textarea,</br>4 - select, </br>5 - radio, </br>6 - checkbox, </br>7 - date</code> | YES
 placeholder | string  | Placeholder for the field | NO
 mode | integer | Field is editable or not.</br>Default is 1<code></br>1 - editable, </br> 2 - non-editable</code> | NO
-vmode | integer | Field is editable or not.</br>Default is 1<code></br>1 - editable, </br> 2 - non-editable</code> | NO
 search | integer | Field is searchable or not.</br>Default is 1 <code></br>1 - searchable, </br> 2 - non-searchable</code> | NO
 options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]</code> | NO
 
@@ -191,16 +188,15 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
   "code": "success",
   "data": {
     "fields": {
-      "ID": "36",
-      "name": "doa",
-      "slug": "doa",
+      "ID": "1",
+      "name": "custom_field",
+      "slug": "custom_field",
       "type": "7",
       "gid": "0",
       "meta": {
-        "placeholder": "Date of appoinment"
+        "placeholder": "Custom Field"
       },
       "mode": "1",
-      "vmode": "1",
       "search": "1",
       "view": "1",
       "created_at": "2022-08-10 11:50:25"
@@ -223,12 +219,11 @@ POST http://example.com/wp-json/funnelkit-automations/field/update/{field_id}
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "slug":"doa",
-    "field_name": "doj",
+        "slug":"custom_field",
+    "field_name": "custom_field2",
         "type": 7,
-        "placeholder": "Date of joining",
+        "placeholder": "Custom Field 2",
         "mode": 1,
-        "vmode": 1,
         "search": 1
     }'
 ```
@@ -256,12 +251,11 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "slug":"doa",
-   "field_name": "doj",
+    "slug":"custom_field",
+   "field_name": "custom_field2",
     "type": 7,
-    "placeholder": "Date of joining",
+    "placeholder": "Custom Field 2",
     "mode": 1,
-    "vmode": 1,
     "search": 1
 }',
   CURLOPT_HTTPHEADER => array(
@@ -289,7 +283,6 @@ group_id | integer | Field group id. Default is 0 | NO
 type | integer | Input type. <code></br>1 - text, </br>2 - number,</br>3 - textarea,</br>4 - select, </br>5 - radio, </br>6 - checkbox, </br>7 - date</code> | NO
 placeholder | string  | Placeholder for the field | NO
 mode | integer | Field is editable or not.</br>Default is 1<code></br>1 - editable, </br> 2 - non-editable</code> | NO
-vmode | integer | Field is editable or not.</br>Default is 1<code></br>1 - editable, </br> 2 - non-editable</code> | NO
 search | integer | Field is searchable or not.</br>Default is 1 <code></br>1 - searchable, </br> 2 - non-searchable</code> | NO
 options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]</code> | NO
 
@@ -300,8 +293,8 @@ options | array   | an array of JSON objects <code></br>['key1'=>'option1',...]<
   "code": "success",
   "data": {
     "fields": {
-      "ID": "36",
-      "name": "doj"
+      "ID": "1",
+      "name": "custom_field2"
     },
     "limit": 0,
     "offset": 0
@@ -368,8 +361,8 @@ Parameter | Type | Description | Mandatory
   "code": "success",
   "data": {
     "fields": {
-      "ID": "36",
-      "name": "doj"
+      "ID": "1",
+      "name": "custom_field"
     },
     "limit": 0,
     "offset": 0

@@ -76,12 +76,12 @@ page | integer | Current page of the collection | NO
   "data": {
     "lists": [
       {
-        "ID": 6,
-        "name": "list2"
+        "ID": 1,
+        "name": "List 1"
       },
       {
-        "ID": 4,
-        "name": "list1"
+        "ID": 2,
+        "name": "List 2"
       }
     ],
     "limit": 0,
@@ -103,7 +103,7 @@ POST http://example.com/wp-json/funnelkit-automations/list/add
     --header 'Content-Type: application/json' \
     --data-raw '
     {
-    "lists": ["list"]
+    "lists": ["List 1", "List 2"]
     }'
 ```
 
@@ -130,7 +130,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-  "lists": ["list","lists2", ...]
+  "lists": ["List 1","List 2"]
   }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -160,10 +160,18 @@ lists | array | an array of JSON objects, respectively, that includes the list n
   "data": {
     "lists": [
       {
-        "ID": 31,
-        "name": "bulkgate",
+        "ID": 1,
+        "name": "List 1",
         "type": "2",
         "created_at": "2022-08-10 11:22:00",
+        "updated_at": null,
+        "data": null
+      },
+      {
+        "ID": 2,
+        "name": "List 2",
+        "type": "2",
+        "created_at": "2022-08-11 11:22:00",
         "updated_at": null,
         "data": null
       }
@@ -211,7 +219,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-  "list": "list_name"
+  "list": "List_name"
   }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -240,8 +248,8 @@ list | string | a JSON object, respectively, that includes the list name - <code
   "code": "success",
   "data": {
     "lists": {
-      "ID": "31",
-      "name": "bulkgate2"
+      "ID": "1",
+      "name": "List_name"
     },
     "limit": 0,
     "offset": 0
@@ -308,8 +316,8 @@ Parameter | Type | Description | MANDATORY
   "code": "success",
   "data": {
     "lists": {
-      "ID": "31",
-      "name": "bulkgate2"
+      "ID": "1",
+      "name": "List_name"
     },
     "limit": 0,
     "offset": 0

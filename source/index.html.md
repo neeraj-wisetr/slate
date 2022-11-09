@@ -99,15 +99,11 @@ You must replace <code>your_api_key</code> with your personal API key.
     "tags": [
       {
         "ID": 1,
-        "name": "tag1"
+        "name": "Tag 1"
       },
       {
         "ID": 2,
-        "name": "tag2"
-      },
-      {
-        "ID": 3,
-        "name": "tag3"
+        "name": "Tag 2"
       }
     ],
     "limit": 0,
