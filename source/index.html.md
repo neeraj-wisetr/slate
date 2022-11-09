@@ -26,7 +26,7 @@ meta:
 
 # Introduction
 
-Welcome to FunnelKit Automations Public API! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access FunnelKit Automations Public API endpoints, which manage the information in our database.
+Welcome to FunnelKit Automations Public REST endpoint! Our APIs are perfected to enable all organizations (of any size) to create powerful integrations that are easy to use and customize. You can use our API to access FunnelKit Automations Public API endpoints, which manage the information in your site.
 To further assist you, we have provided code samples on the bottom right section of this page. You can switch the programming language of these examples with the tabs given in the top right.
 
 # Authentication
