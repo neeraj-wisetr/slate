@@ -732,12 +732,11 @@ status | string | Status for the contact</br><code>unverified, subscribed, bounc
       },
       "customer": null,
       "fields": {
-        "1": "Vasant Vihar",
-        "2": "New Delhi",
-        "3": "Delhi",
-        "4": "110057",
-        "5": "abc",
-        "6": "Male"
+        "1": "Sydney",
+        "2": "Australia",
+        "3": "2009",
+        "4": "abc",
+        "5": "Male"
       }
     },
     "limit": 0,
