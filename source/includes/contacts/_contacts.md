@@ -137,7 +137,7 @@ GET http://example.com/wp-json/funnelkit-automations/contact
     curl --location --request GET 'http://example.com/wp-json/funnelkit-automations/contact' \
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
-    --header 'id: 123' \
+    --header 'id: 1' \
     --header 'email: gary@gmail.com' \
     --data-raw ''
 ```
@@ -148,7 +148,7 @@ $site_url = 'http://example.com';
 $endpoint = '/wp-json/funnelkit-automations/contact';
 $params = [
     'api_key' => 'your_api_key',
-    'id'      => 123,
+    'id'      => 1,
     'email'   => 'gary@gmail.com'
 ];
 
@@ -260,8 +260,8 @@ POST http://example.com/wp-json/funnelkit-automations/contact/add
         "country": "AU",
         "state": "Melbourne",
         "status": "subscribed",
-        "tags": [id1,id2],
-        "lists": [id1,id2],
+        "tags": [1,2],
+        "lists": [1,2],
         "fields": {
             "40":"20-11-1993",
             "6": "Male"
@@ -299,11 +299,11 @@ curl_setopt_array($curl, array(
         "country": "AU",
         "state": "Melbourne",
         "status": "subscribed",
-        "tags": [id1,id2],
-        "lists": [id1,id2],
+        "tags": [1,2],
+        "lists": [1,2],
         "fields": {
-            "40":"20-11-1993",
-            "6": "Male"
+            "1":"20-11-1993",
+            "2": "Male"
         }
 }',
   CURLOPT_HTTPHEADER => array(
@@ -347,16 +347,16 @@ source | string | Contact is getting created from.</br> Default is public_api   
       "contact": {
         "id": 1,
         "uid": "f1b1bbeb5258c9ec4896c025118b23da",
-        "email": "gary@gmail.com",
+        "email": "tyson@gmail.com",
         "wp_id": 0,
         "meta": {},
         "children": {},
         "db_contact": null,
         "blank_values_update": false,
         "is_subscribed": false,
-        "f_name": "Gary",
-        "l_name": "Watson",
-        "state": "Sydney",
+        "f_name": "Tyson",
+        "l_name": "Andrew",
+        "state": "Melbourne",
         "country": "AU",
         "contact_no": "1234567890",
         "status": 0,
@@ -365,7 +365,8 @@ source | string | Contact is getting created from.</br> Default is public_api   
       },
       "customer": null,
       "fields": {
-        "6": "Male"
+        "1":"20-11-1993",
+        "2": "Male"
       }
     },
     "limit": 0,
@@ -429,7 +430,7 @@ curl_setopt_array($curl, array(
         "state": "Sydney",
         "status": "unsubscribed",
         "fields": {
-            "6": "Male"
+            "5": "Male"
         }
     }',
   CURLOPT_HTTPHEADER => array(
@@ -756,7 +757,7 @@ POST http://example.com/wp-json/funnelkit-automations/contact/tag-assign/{contac
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "tags":[id1,id2]
+        "tags":[1,2]
     }'
 ```
 
