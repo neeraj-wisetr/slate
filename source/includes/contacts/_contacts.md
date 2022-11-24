@@ -329,7 +329,7 @@ email | string | Email for the contact                                          
 f_name | string | First name for the contact                                                                                          | NO
 l_name | string | Last name for the contact                                                                                           | NO
 contact_no | string | Phone number for the contact                                                                                        | NO
-status | string | Status for the contact<br> Default is subscribed</br><code>unverified, subscribed,</br>bounced, unsubscribed</code> | NO
+status | string | Status for the contact<br> Default is unverified</br><code>unverified, subscribed,</br>bounced, unsubscribed</code> | NO
 country | string | First two letters of the country. <br> <code>Example : India - IN</code>                                            | NO
 state | string | State living in                                                                                                     | NO
 tags | array | array of tag ids</br><code>[id1,id2,..]</code>                                                                      | NO
@@ -451,19 +451,19 @@ echo $response;
 
 `POST http://example.com/wp-json/funnelkit-automations/contact/update/{contact_id}`
 
-Parameter | Type | Description                                                                                                         | Mandatory
------ |---------|---------------------------------------------------------------------------------------------------------------------|--------- 
-email | string | Email for the contact                                                                                               | NO
-f_name | string | First name for the contact                                                                                          | NO
-l_name | string | Last name for the contact                                                                                           | NO
-contact_no | string | Phone number for the contact                                                                                        | NO
-status | string | Status for the contact<br> Default is subscribed</br><code>unverified, subscribed,</br>bounced, unsubscribed</code> | NO
-country | string | First two letters of the country. <br> <code>Example : India - IN</code>                                            | NO
-state | string | State living in                                                                                                     | NO
-tags | array | array of tag ids</br><code>[id1,id2,..]</code>                                                                      | NO
-lists | array | array of list ids</br><code>[id1,id2,..]</code>                                                                     | NO
-fields | object | a JSON object, respectively,</br>that includes key and value</br><code>{'field_id : field value',...}</code>        | NO
-source | string | Contact is getting created from.</br> Default is public_api                                                         | NO
+Parameter | Type | Description                                                                                                       | Mandatory
+----- |---------|-------------------------------------------------------------------------------------------------------------------|--------- 
+email | string | Email for the contact                                                                                             | NO
+f_name | string | First name for the contact                                                                                        | NO
+l_name | string | Last name for the contact                                                                                         | NO
+contact_no | string | Phone number for the contact                                                                                      | NO
+status | string | Status for the contact<br> Default is subscribed</br><code>verified, subscribed,</br>bounced, unsubscribed</code> | NO
+country | string | First two letters of the country. <br> <code>Example : India - IN</code>                                          | NO
+state | string | State living in                                                                                                   | NO
+tags | array | array of tag ids</br><code>[id1,id2,..]</code>                                                                    | NO
+lists | array | array of list ids</br><code>[id1,id2,..]</code>                                                                   | NO
+fields | object | a JSON object, respectively,</br>that includes key and value</br><code>{'field_id : field value',...}</code>      | NO
+source | string | Contact is getting created from.</br> Default is public_api                                                       | NO
 
 > JSON response example:
 
@@ -642,7 +642,7 @@ POST http://example.com/wp-json/funnelkit-automations/contact/change-status/{con
     --header 'api_key: {api-key}' \
     --header 'Content-Type: application/json' \
     --data-raw '{
-        "status":"subscribe"
+        "status":"subscribed"
     }'
 
 ```
@@ -671,7 +671,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_POSTFIELDS =>'{
-    "status":"subscribe"
+    "status":"subscribed"
 }',
   CURLOPT_HTTPHEADER => array(
     'Content-Type: application/json'
@@ -690,9 +690,9 @@ echo $response;
 
 `POST http://example.com/wp-json/funnelkit-automations/contact/change-status/{contact_id}`
 
-Parameter | Type | Description                                                                                | Mandatory
------ |---------|--------------------------------------------------------------------------------------------|--------- 
-status | string | Status for the contact</br><code>unverified, subscribed, bounced, </br>unsubscribed</code> | YES
+Parameter | Type | Description                                                                              | Mandatory
+----- |---------|------------------------------------------------------------------------------------------|--------- 
+status | string | Status for the contact</br><code>verified, subscribed, bounced, </br>unsubscribed</code> | YES
 
 > JSON response example:
 
